@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "menu_item": {
+      "title": "MenuItem",
+      "description": "An item in the hotel restaurant or service menu",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "available": { "type": "boolean" }
+      },
+      "required": ["name", "price", "category", "available"]
+    },
+    "order": {
+      "title": "Order",
+      "description": "A food or service order placed by a guest",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tableNumber": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string", "enum": ["pending", "completed", "cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["tableNumber", "items", "totalAmount", "status"]
+    },
+    "alert": {
+      "title": "Alert",
+      "description": "An alert triggered by a guest to call a waiter or request a bill",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "tableNumber": { "type": "string" },
+        "type": { "type": "string", "enum": ["waiter", "bill"] },
+        "status": { "type": "string", "enum": ["pending", "resolved"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["tableNumber", "type", "status"]
+    },
+    "transaction": {
+      "title": "Transaction",
+      "description": "An income or expense ledger entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["income", "expense"] },
+        "category": { "type": "string" },
+        "amount": { "type": "number" },
+        "description": { "type": "string" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["type", "category", "amount", "date"]
+    }
+  },
+  "firestore": {
+    "menu_items": {
+      "schema": "menu_item",
+      "description": "Collection of all items available for guests to order"
+    },
+    "orders": {
+      "schema": "order",
+      "description": "Collection of orders placed by guests"
+    },
+    "alerts": {
+      "schema": "alert",
+      "description": "Active alerts for waiter service"
+    },
+    "transactions": {
+      "schema": "transaction",
+      "description": "Ledger transactions tracking hotel and restaurant finances"
+    }
+  }
+}

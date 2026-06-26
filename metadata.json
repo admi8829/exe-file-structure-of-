@@ -1,0 +1,6 @@
+{
+  "name": "Hotel Management System",
+  "description": "A comprehensive Hotel Management System featuring a Customer QR Menu for table ordering and waiter calling, paired with an Admin Dashboard with real-time orders, alerts, audio notifications, and a financial expense ledger.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
