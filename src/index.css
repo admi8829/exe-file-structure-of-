@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@keyframes borderGlowPulse {
+  0% {
+    border-color: rgba(245, 158, 11, 0.3);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.1);
+  }
+  50% {
+    border-color: rgba(245, 158, 11, 0.8);
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.4);
+  }
+  100% {
+    border-color: rgba(244, 63, 94, 0.5);
+    box-shadow: 0 0 12px rgba(244, 63, 94, 0.25);
+  }
+}
+
+.animate-border-glow {
+  animation: borderGlowPulse 3s infinite ease-in-out;
+}
+

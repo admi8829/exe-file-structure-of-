@@ -825,23 +825,23 @@ export default function AdminDashboard() {
 
                 <div className="space-y-4">
                   {menuItems.map((item) => (
-                    <div key={item.id} className="bg-[#1a2333]/40 border border-[#1c283a] p-4 rounded-xl flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-4">
+                    <div key={item.id} className="bg-[#1a2333]/40 border border-[#1c283a] p-3 rounded-2xl flex items-center justify-between gap-4 transition-all duration-300 hover:bg-[#1f2a3d]/60 hover:border-amber-500/30">
+                      <div className="flex items-center gap-3">
                         <img 
                           src={item.imageUrl} 
                           alt={item.name} 
-                          className="w-14 h-14 object-cover rounded-lg bg-[#202c3f]"
+                          className="w-11 h-11 object-cover rounded-2xl bg-[#202c3f] border-2 animate-border-glow transition-transform duration-300 hover:scale-110 hover:rotate-2 shadow-lg"
                           referrerPolicy="no-referrer"
                         />
                         <div>
-                          <div className="flex items-center gap-2">
-                            <h4 className="font-extrabold text-white text-sm tracking-wide">{item.name}</h4>
-                            <span className="text-[9px] bg-[#222e3e] text-amber-500 font-extrabold uppercase px-1.5 py-0.5 rounded">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <h4 className="font-extrabold text-white text-xs tracking-wide">{item.name}</h4>
+                            <span className="text-[8px] bg-[#222e3e] text-amber-500 font-extrabold uppercase px-1.5 py-0.5 rounded-full border border-amber-500/20">
                               {item.category}
                             </span>
                           </div>
-                          <p className="text-xs text-gray-400 line-clamp-1 mt-0.5">{item.description}</p>
-                          <span className="text-xs text-amber-500 font-bold">${item.price.toFixed(2)}</span>
+                          <p className="text-[10px] text-gray-400 line-clamp-1 mt-0.5 max-w-xs md:max-w-md">{item.description}</p>
+                          <span className="text-[11px] text-amber-400 font-extrabold">${item.price.toFixed(2)}</span>
                         </div>
                       </div>
 
